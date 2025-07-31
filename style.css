@@ -18,15 +18,6 @@
     font-style: normal;
 }
 
-/* Body or content font - Lato Bold */
-/* @font-face {
-    font-family: 'lato-bold';
-    src: url('./fonts/lato-regular-webfont.woff2') format('woff2'),
-        url('./fonts/lato-regular-webfont.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-} */
-
 * {
     padding: 0;
     margin: 0;
@@ -153,6 +144,10 @@ body {
     text-wrap: wrap;
 }
 
+.intro-text p > em {
+    font-weight: bold;
+}
+
 .intro-text p:last-child {
     margin-bottom: 0;
 }
@@ -242,7 +237,7 @@ input[type="password"]:invalid:not(:placeholder-shown) {
     display: none;
 }
 
-div .button {
+button[type="submit"] {
     background-color: #596d48;
     color: #fff;
     padding: 8px 25px;
@@ -254,6 +249,9 @@ div .button {
     transition: background-color 0.2s ease;
     margin-left: 40px;
     margin-top: 20px;
+}
+button[type="submit"]:hover {
+    background-color: #4a5c3e;
 }
 
 .login-text {
@@ -273,3 +271,89 @@ div .button {
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        min-height: auto;
+        box-shadow: none;
+    }
+
+    .image-sidebar {
+        min-width: auto;
+        min-height: 250px;
+        border-radius: 0;
+    }
+
+    .logo-section {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 0;
+        width: auto;
+    }
+
+    .company-logo-svg {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+        margin-right: 10;
+    }
+
+    .company-logo-text {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+
+    .form-section {
+        padding: 30px 20px;
+    }
+
+    .intro-text {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    form > h2, 
+    button[type="submit"],
+    .login-text {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 0px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .input-group {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-section {
+        padding: 15px 12px;
+    }
+
+    .intro-text {
+        margin-bottom: 15px;
+    }
+
+    form > h2, 
+    button[type="submit"],
+    .login-text {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .form-row {
+        gap: 10px;
+        padding: 0 12px;
+    }
+}
