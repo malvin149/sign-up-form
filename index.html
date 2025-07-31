@@ -38,18 +38,18 @@
             <div class="form-row">
                 <div class="input-group">
                     <label for="first-name">FIRST NAME</label>
-                    <input type="text" id="first-name" name="first_name" required autocomplete="given-name">
+                    <input type="text" id="first-name" name="first_name" autocomplete="given-name">
                 </div>
                 <div class="input-group">
                     <label for="last-name">LAST NAME</label>
-                    <input type="text" id="last-name" name="last_name" required autocomplete="family-name">
+                    <input type="text" id="last-name" name="last_name" autocomplete="family-name">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="input-group">
                     <label for="email">EMAIL</label>
-                    <input type="email" name="email" id="email" required autocomplete="email">
+                    <input type="email" name="email" id="email" autocomplete="email">
                 </div>
                 
                 <div class="input-group">
@@ -61,19 +61,25 @@
             
             <div class="form-row">
                 <div class="input-group">
-                    <label for="password">PASSWORD</label>
+                    <label for="password">PASSWORD
+                    <span class="required-asterisk">*</span>
+                    </label>
                     <input type="password" name="password" id="password" required autocomplete="new-password">
                     <span class="error-message"></span>
                 </div>
                 
                 <div class="input-group">
-                    <label for="confirm-password">CONFIRM PASSWORD</label>
+                    <label for="confirm-password">CONFIRM PASSWORD 
+                    <span class="required-asterisk">*</span>
+                    </label>
                     <input type="password" name="confirm_password" id="confirm-password" required autocomplete="new-password">
                     <span class="error-message"></span>
                 </div>
             </div>
 
-            <button type="submit">Create Account</button>
+            <div>
+                <button class="button" type="submit">Create Account</button>
+            </div>
 
             <p class="login-text">Already have an account? <a href="#">Log in</a></p>
         </form>
