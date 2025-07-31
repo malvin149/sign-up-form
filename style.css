@@ -47,9 +47,95 @@ body {
 .container {
     display: flex;
     width: 100%;
-    max-width: 960px;
+    max-width: 1200px;
     min-height: 100vh;
     background-color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+}
+
+.image-sidebar {
+    flex: 1;
+    background-image: url(./assets/sidebar-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    min-width: 350px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.logo-section {
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-logo-svg {
+    width: 120px;
+    height: 150px;
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 1;
+}
+
+.company-logo-text {
+    font: 5.5rem 'Bebas Neue', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.image-credit, 
+.logo-attribution {
+    position: absolute;
+    left: 10px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 2;
+}
+
+.image-credit {
+    bottom: 35px;
+}
+
+.logo-attribution {
+    bottom: 10px;
+}
+
+.image-credit a,
+.logo-attribution a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+}
+
+.image-credit a:hover,
+.logo-attribution a:hover {
+    text-decoration: underline;
+}
+
+.intro-text {
+    min-width: 350px;
+    width: 80%;
+    text-wrap: wrap;
 }
