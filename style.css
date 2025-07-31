@@ -11,18 +11,45 @@
 
 /* Body or content font - Lato Regular */
 @font-face {
-    font-family: 'lato';
-    src: url('./fonts/bebasneue-regular-webfont.woff2') format('woff2'),
-        url('./fonts/bebasneue-regular-webfont.woff') format('woff');
-    font-weight: 400;
+    font-family: 'Lato';
+    src: url('./fonts/lato-regular-webfont.woff2') format('woff2'),
+        url('./fonts/lato-regular-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
 
 /* Body or content font - Lato Bold */
-@font-face {
-    font-family: 'lato';
+/* @font-face {
+    font-family: 'lato-bold';
     src: url('./fonts/lato-regular-webfont.woff2') format('woff2'),
         url('./fonts/lato-regular-webfont.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 1em 'Lato', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 960px;
+    min-height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
