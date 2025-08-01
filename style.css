@@ -18,6 +18,7 @@
     font-style: normal;
 }
 
+/* General Resets $ Body Styles */
 * {
     padding: 0;
     margin: 0;
@@ -26,7 +27,7 @@
 
 body {
     font: 1em 'Lato', sans-serif;
-    background-color: #f0f2f5;
+    background-color: #0e0f10f3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,18 +46,19 @@ body {
     overflow: hidden;
 }
 
+/* Image Sidebar Styles */
 .image-sidebar {
     flex: 1;
-    background-image: url(./assets/sidebar-bg.jpg);
+    background-image: url(./assets/sidebar-background.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: relative;
+    flex-direction: column;  /* To stack logo section and credits */
     align-items: center;
     color: #fff;
-    position: relative;
+    position: relative; /* Positioning context for absolute children*/
     min-width: 320px;
 }
 
@@ -67,17 +69,21 @@ body {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    z-index: -1; /* Placed behind SVG and text within .logo-section */
 }
 
 .logo-section {
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
+    position: absolute; /* Positioned relative to .image-sidebar */
+    top: 100px; /* Specific value to position it down from the top */
+    left: 0;
+    width: 100%; 
+    height: 180px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    z-index: 2; /* Ensures it's above other sidebar content */
+    overflow: hidden; /* Clips content if it overflows this section */
 }
 
 .company-logo-svg {
@@ -86,6 +92,7 @@ body {
     fill: #fff;
     stroke: #fff;
     stroke-width: 1;
+    margin-bottom: 10px;
 }
 
 .company-logo-text {
@@ -100,19 +107,21 @@ body {
 
 .image-credit, 
 .logo-attribution {
-    position: absolute;
-    left: 10px;
+    position: absolute; /* Positioned relative to .image-sidebar */
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.7);
-    z-index: 2;
+    z-index: 2; /* Ensures they are above background and overlay */
 }
 
 .image-credit {
-    bottom: 35px;
+    left: 40px;
+    bottom: 30px;
 }
 
 .logo-attribution {
+    right: 10px;
     bottom: 10px;
+    text-align: right;
 }
 
 .image-credit a,
@@ -126,6 +135,7 @@ body {
     text-decoration: underline;
 }
 
+/* Form Section Styles */
 .form-section {
     flex: 2;
     display: flex;
@@ -144,7 +154,8 @@ body {
     text-wrap: wrap;
 }
 
-.intro-text p > em {
+/* Target <em> tags directlyh within any  */
+ p > em {
     font-weight: bold;
 }
 
@@ -177,10 +188,10 @@ form > h2 {
 }
 
 .input-group {
-    flex: 1 1 calc(50% - 10px);
+    flex: 1 1 calc(50% - 10px); /* 50% - 10px (half of gap) */
     display: flex;
     flex-direction: column;
-    min-width: 200px;
+    min-width: 200px; /* Ensures inputs don't get too small before wrapping */
 }
 
 .input-group label {
@@ -191,10 +202,8 @@ form > h2 {
     text-transform: uppercase;
 }
 
-input[type="text"], 
-input[type="email"], 
-input[type="tel"], 
-input[type="password"] {
+/* General styling for all input types */
+input {
     width: 100%;
     padding: 10px;
     border: 1px solid #e5e7eb;
@@ -203,31 +212,28 @@ input[type="password"] {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-input[type="text"]:focus, 
-input[type="email"]:focus, 
-input[type="tel"]:focus, 
-input[type="password"]:focus {
+input:focus {
    outline: none;
    border-color: #3b82f6;
    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
 }
 
-input[type="text"]:invalid, 
-input[type="email"]:invalid, 
-input[type="tel"]:invalid, 
-input[type="password"]:invalid {
-   border-color: #ef4444;
+/* Placeholder text syle */
+input::placeholder {
+    font-weight: lighter;
+    color: rgba(128, 128, 128, 0.383);
+    font-size: 0.8rem;
 }
 
-input[type="text"]:invalid:not(:placeholder-shown), 
-input[type="email"]:invalid:not(:placeholder-shown), 
-input[type="tel"]:invalid:not(:placeholder-shown), 
-input[type="password"]:invalid:not(:placeholder-shown) {
+/* Only apply red border if input is invalid AND user has typed something */
+input:invalid:not(:placeholder-shown) {
    border-color: #ef4444;
 }
 
 .required-asterisk {
     color: #ef4444;
+    font-weight: bold;
+    margin-left: 2px;
 }
 
 .error-message {
@@ -237,6 +243,7 @@ input[type="password"]:invalid:not(:placeholder-shown) {
     display: none;
 }
 
+/* Submit Button Styling */
 button[type="submit"] {
     background-color: #596d48;
     color: #fff;
@@ -271,58 +278,64 @@ button[type="submit"]:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+
+/* --- Responsive Adjustments (Media Queries) --- */
+@media (max-width: 768px) { /* Styles for tablets and smaller desktops */
     .container {
-        flex-direction: column;
+        flex-direction: column; /* Stack sidebar and form vertically */
         min-height: auto;
         box-shadow: none;
     }
 
     .image-sidebar {
         min-width: auto;
-        min-height: 250px;
+        min-height: 200px; /* fixed height for mobile header */
         border-radius: 0;
     }
 
     .logo-section {
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         position: absolute;
         top: 20px;
-        left: 20px;
+        left: 0;
         padding: 0;
-        width: auto;
+        width: 100%;
+        height: 120px;
+        background-color: transparent;
     }
 
+    
     .company-logo-svg {
         width: 60px;
         height: 60px;
         margin-bottom: 0;
-        margin-right: 10;
+        margin-right: 15px;
     }
 
     .company-logo-text {
         font-size: 2.5rem;
         text-align: left;
     }
-
+    
     .form-section {
         padding: 30px 20px;
     }
-
+    
     .intro-text {
         width: 100%;
         font-size: 1rem;
         margin-bottom: 20px;
     }
-
+    
+    /* Adjust padding/margin for form elements to fit mobile screens */
     form > h2, 
     button[type="submit"],
     .login-text {
         padding-left: 20px;
         padding-right: 20px;
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     .form-row {
@@ -336,7 +349,7 @@ button[type="submit"]:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* Styles for smaller mobile phones */
     .form-section {
         padding: 15px 12px;
     }
