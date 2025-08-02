@@ -31,7 +31,7 @@ This project is a modern sign-up form designed to demonstrate best practices in 
 
 ```bash
 Clone the repository:
-git clone git@github.com:malvin149/sign-up-form.git
+git clone git@github.com:malvin149/sign-up-form.git 
 cd sign-up-form
 ```
 
