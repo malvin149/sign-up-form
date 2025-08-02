@@ -27,7 +27,7 @@ This project is a modern sign-up form designed to demonstrate best practices in 
 
 ### ⚙️ Setup and Usage
 
-1. Getting this project up and running is straightforward
+1. Getting this project up and running is straightforward:
 
 ```bash
  git clone git@github.com:malvin149/sign-up-form.git 
