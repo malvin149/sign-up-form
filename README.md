@@ -3,6 +3,13 @@
 This project is a modern sign-up form designed to demonstrate best practices in HTML and CSS for creating clean, user-friendly web interfaces. It features a visually appealing layout with an image sidebar and a dynamic form section.
 
 
+## Live Demo/Screenshot
+
+[Live Demo](https://malvin149.github.io/sign-up-form/)
+
+![Screenshot of the Sign-up Form](./assets/live-preview.png)
+---
+
 ### ✨ Features
 
 - __Fixed Desktop Layout:__ The design focuses on a clean two-column layout for larger screens.
@@ -22,14 +29,13 @@ This project is a modern sign-up form designed to demonstrate best practices in 
 
 1. Getting this project up and running is straightforward
 
-```
+```bash
 Clone the repository:
-git clone <repository-url>
-cd <project-folder-name>
+git clone git@github.com:malvin149/sign-up-form.git
+cd sign-up-form
 ```
-(Replace `<repository-url>` and `<project-folder-name>` with your actual repository details).
 
-2. Open in Browser:Simply open the index.html file in your preferred web browser. All styles are linked via style.css.
+2. Open in Browser:Simply open the `index.html` file in your preferred web browser. All styles are linked via `style.css`.
 
 
 ### 🤝 Credits and Attribution
