@@ -161,6 +161,7 @@ body {
 
 .intro-text p:last-child {
     margin-bottom: 0;
+    margin-top: 8px;
 }
 
 form {
@@ -276,97 +277,4 @@ button[type="submit"]:hover {
 
 .login-text a:hover {
     text-decoration: underline;
-}
-
-
-/* --- Responsive Adjustments (Media Queries) --- */
-@media (max-width: 768px) { /* Styles for tablets and smaller desktops */
-    .container {
-        flex-direction: column; /* Stack sidebar and form vertically */
-        min-height: auto;
-        box-shadow: none;
-    }
-
-    .image-sidebar {
-        min-width: auto;
-        min-height: 200px; /* fixed height for mobile header */
-        border-radius: 0;
-    }
-
-    .logo-section {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 20px;
-        left: 0;
-        padding: 0;
-        width: 100%;
-        height: 120px;
-        background-color: transparent;
-    }
-
-    
-    .company-logo-svg {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 0;
-        margin-right: 15px;
-    }
-
-    .company-logo-text {
-        font-size: 2.5rem;
-        text-align: left;
-    }
-    
-    .form-section {
-        padding: 30px 20px;
-    }
-    
-    .intro-text {
-        width: 100%;
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-    
-    /* Adjust padding/margin for form elements to fit mobile screens */
-    form > h2, 
-    button[type="submit"],
-    .login-text {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-left: 0;
-    }
-
-    .form-row {
-        flex-direction: column;
-        gap: 15px;
-        padding: 0 20px;
-    }
-
-    .input-group {
-        min-width: auto;
-    }
-}
-
-@media (max-width: 480px) { /* Styles for smaller mobile phones */
-    .form-section {
-        padding: 15px 12px;
-    }
-
-    .intro-text {
-        margin-bottom: 15px;
-    }
-
-    form > h2, 
-    button[type="submit"],
-    .login-text {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
-    .form-row {
-        gap: 10px;
-        padding: 0 12px;
-    }
 }
