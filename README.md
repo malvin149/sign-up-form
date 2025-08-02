@@ -30,12 +30,11 @@ This project is a modern sign-up form designed to demonstrate best practices in 
 1. Getting this project up and running is straightforward
 
 ```bash
-Clone the repository:
-git clone git@github.com:malvin149/sign-up-form.git 
-cd sign-up-form
+ git clone git@github.com:malvin149/sign-up-form.git 
+ cd sign-up-form
 ```
 
-2. Open in Browser:Simply open the `index.html` file in your preferred web browser. All styles are linked via `style.css`.
+2. Open in Browser: Simply open the `index.html` file in your preferred web browser. All styles are linked via `style.css`.
 
 
 ### 🤝 Credits and Attribution
